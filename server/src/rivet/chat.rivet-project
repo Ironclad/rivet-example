@@ -9,8 +9,102 @@ data:
       metadata:
         description: ""
         id: 5BI0Pfuu2naOUKqGUO-yZ
-        name: Untitled Graph
-      nodes: {}
+        name: "* Initial Chat"
+      nodes:
+        '[-v8vfkQzqCrE6X_BYGRI7]:graphInput "Graph Input"':
+          data:
+            dataType: object[]
+            id: messages
+            useDefaultValueInput: true
+          outgoingConnections:
+            - data->"Assemble Prompt" bT5C1n80OJUvt0HWT3s2N/message1
+          visualData: 536/302/300/null
+        '[a3laSCibbrhJ4FVNCl3pD]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1692/491/300/7
+        '[bDQ8wPuk4SzLclg0UerD0]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: How can I help?
+            type: assistant
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" fykcLhOkm_HAYnw-5KIH3/message1
+          visualData: -212/190/250/1
+        '[bT5C1n80OJUvt0HWT3s2N]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Chat" rTcNfKE6RPuc1xmHw1XAC/prompt
+          visualData: 1027/774/250/6
+        '[fykcLhOkm_HAYnw-5KIH3]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Graph Input" -v8vfkQzqCrE6X_BYGRI7/default
+          visualData: 108/292/250/null
+        '[gDu9dzQVvUPtY2sfkkaTh]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: 5 5 1
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" fykcLhOkm_HAYnw-5KIH3/message2
+          visualData: -213/362/250/2
+        '[jWA87wcF_GlS2np55xD5z]:text "Text"':
+          data:
+            text: You are a helpful assistant.
+          outgoingConnections:
+            - output->"Chat" rTcNfKE6RPuc1xmHw1XAC/systemPrompt
+          visualData: 628/589/300/null
+        '[m-mbyszIqKzxgtKg1NrZ6]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: >-
+              Your task is to choose the most appropriate skill to execute to
+              respond to the user. The skills you can choose from are:
+
+              * PLAY_GAME_OF_24 - solve a "game of 24" puzzle. This is appropriate if the user gives you several integers.
+
+              * SIMPLE_REPLY - reply to the user, based on the conversation. Only select this skill if no other skills are appropriate.
+
+
+              FIRST, explain your reasoning.
+
+              THEN, respond in the following format:
+
+
+              APPROPRIATE_SKILL: [SKILL]
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" bT5C1n80OJUvt0HWT3s2N/message2
+          visualData: 684/731/250/5
+        '[rTcNfKE6RPuc1xmHw1XAC]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Graph Output" a3laSCibbrhJ4FVNCl3pD/value
+          visualData: 1323/479/200/3
   metadata:
     description: ""
     id: QiMtlIf2TmgkjfxPGu1Cd

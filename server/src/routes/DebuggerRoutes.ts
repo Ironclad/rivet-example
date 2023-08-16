@@ -1,15 +1,11 @@
 import { Request, Response, Router } from 'express';
 import WebSocket from 'ws';
 
-import { logger } from '@ironclad/logging-iso';
-import { UserId } from '@ironclad/precedent-iso';
 import { GraphId, GraphInputs, GraphProcessor, RivetDebuggerServer, startDebuggerServer } from '@ironclad/rivet-node';
 
 export const rivetDebuggerServerState = {
   server: null as RivetDebuggerServer | null,
 };
-
-export const registeredDebuggers: { userId: UserId; ws: WebSocket.WebSocket }[] = [];
 
 export function startRivetDebuggerServer(
   wss: WebSocket.Server,
@@ -24,7 +20,6 @@ export function startRivetDebuggerServer(
   } = {},
 ) {
   if (rivetDebuggerServerState.server) {
-    // Could be multiple services, but that's fine, chats is global too
     return;
   }
 
@@ -43,24 +38,12 @@ export function startRivetDebuggerServer(
   });
 
   rivetDebuggerServer.on('error', (err) => {
-    logger.error('Error from rivet debugger', { err });
+    console.error('Error from rivet debugger', { err });
   });
 
   rivetDebuggerServerState.server = rivetDebuggerServer;
 
-  logger.info('Started rivet debugger');
-}
-
-export function registerRivetDebugger(userId: UserId, ws: WebSocket.WebSocket) {
-  const info = { userId, ws };
-  registeredDebuggers.push(info);
-
-  ws.on('close', () => {
-    const index = registeredDebuggers.indexOf(info);
-    if (index !== -1) {
-      registeredDebuggers.splice(index, 1);
-    }
-  });
+  console.info('Started rivet debugger');
 }
 
 export function rivetDebuggerSocketRoutes(
@@ -77,12 +60,12 @@ export function rivetDebuggerSocketRoutes(
     onConnected = (socket, req, wsServer) => {
       wsServer.emit('connection', socket, req);
 
-      logger.info('Rivet debugger connected');
+      console.info('Rivet debugger connected');
       socket.on('close', () => {
-        logger.info('Rivet debugger disconnected');
+        console.info('Rivet debugger disconnected');
       });
     },
-    validate,
+    validate = () => { return undefined },
     wss = new WebSocket.Server({ noServer: true }),
   } = options;
 
@@ -104,7 +87,7 @@ export function rivetDebuggerSocketRoutes(
         onConnected(ws, req, wss);
       });
     } catch (err) {
-      logger.error('Error while upgrading websocket', { err });
+      console.error('Error while upgrading websocket', { err });
       res.status(500).send('Internal Server Error');
     }
   });

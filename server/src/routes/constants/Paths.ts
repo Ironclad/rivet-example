@@ -7,6 +7,8 @@ import { Immutable } from '@src/other/types';
 
 const Paths = {
   Base: '/api',
+  RivetExample: '/rivet-example',
+  RivetDebugger: '/rivet/debugger',
   Users: {
     Base: '/users',
     Get: '/all',

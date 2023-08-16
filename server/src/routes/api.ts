@@ -1,8 +1,11 @@
 import { Router } from 'express';
 import jetValidator from 'jet-validator';
+import WebSocket from 'ws';
 
 import Paths from './constants/Paths';
 import { rivetExample } from './RivetRoutes';
+import { rivetDebuggerSocketRoutes, startRivetDebuggerServer } from './DebuggerRoutes';
+import { runRivetGraph } from '@src/services/RivetRunner';
 
 
 // **** Variables **** //
@@ -10,10 +13,20 @@ import { rivetExample } from './RivetRoutes';
 const apiRouter = Router(),
   validate = jetValidator();
 
-const router = Router();
-router.post('/', rivetExample());
-apiRouter.use(Paths.Users.Base, rivetExample());
+apiRouter.post(Paths.RivetExample, rivetExample);
 
+// **** Websocket for Rivet debugger **** //
+
+const debuggerServer = new WebSocket.Server({ noServer: true });
+startRivetDebuggerServer(debuggerServer, {
+  dynamicGraphRun: async ({ inputs, graphId }) => {
+    await runRivetGraph(graphId, inputs);
+  }
+});
+rivetDebuggerSocketRoutes(apiRouter, {
+  path: Paths.RivetDebugger,
+  wss: debuggerServer,
+});
 
 // **** Export default **** //
 
