@@ -1,0 +1,14 @@
+{
+  "name": "rivet-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd server && npm install && cd ../app && npm install",
+    "start-server": "cd server && npm run dev",
+    "start-client": "cd client && npm run start",
+    "start": "concurrently --kill-others \"cd server && npm run dev\" \"cd app && npm run start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
