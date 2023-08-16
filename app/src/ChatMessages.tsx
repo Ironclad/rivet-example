@@ -31,7 +31,7 @@ const Chatbot: React.FC = () => {
       <div>
         {messages.map((message, index) => (
           <div key={index} style={{ textAlign: message.type === 'user' ? "right" : "left" }}>
-            <span style={{ display: "inline-block", backgroundColor: message.type === 'user' ? "#4CAF50" : "#ddd", padding: "8px 12px", borderRadius: "16px", maxWidth: "70%", marginBottom: "8px" }}>{message.message}</span>
+            <span style={{ display: "inline-block", backgroundColor: message.type === 'user' ? "#4CAF50" : "#ddd", padding: "8px 12px", borderRadius: "16px", maxWidth: "70%", marginBottom: "8px", whiteSpace: "pre-wrap" }}>{message.message}</span>
           </div>
         ))}
       </div>
