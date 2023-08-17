@@ -278,7 +278,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 1919.7746840016455/595.644144725191/300/5
+          visualData: 2201.499861001212/982.629277966354/300/21
         '[JSxv1qjjpQst-gerSvo1P]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -316,13 +316,53 @@ data:
             useUseTopPInput: false
             useUserInput: false
           outgoingConnections:
-            - response->"Graph Output" IxNaO-Ge-QFsjlPWmL0X8/value
-          visualData: 1684.0583810796286/569.2974741951805/200/4
+            - response->"Text" rFNDdJB9Wd3KFdfVppqOi/numbers
+          visualData: 1795.5100994530835/310.79140519008365/200/14
         '[hMIBnjUZGOOhd7BjO8Dmg]:prompt "Prompt"':
           data:
             enableFunctionCall: false
-            promptText: >
+            promptText: >-
               I should have provided you some numbers in my previous message.
+
+
+              Output these numbers, separated by commas. For example, "5, 5, 3, 4."
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" RK-JSMbiBDXHieuODZ1UQ/message2
+          visualData: 1179.187250068812/506.137919370722/250/11
+        '[k-5Lxnn3SQtHCa-2Qc8FA]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Graph Output" IxNaO-Ge-QFsjlPWmL0X8/value
+          visualData: 1940.7606821585725/980.7766285941701/200/20
+        '[rFNDdJB9Wd3KFdfVppqOi]:text "Text"':
+          data:
+            text: >
+              Here are some numbers:
+
+              {{numbers}}
 
 
               Your task is to make the number 24 using all of these numbers. You can add, subtract, multiply, and divide. Use all the numbers provided exactly once. You can use them in any order. For example, if I gave you "5, 5, 3, 4" a valid answer would be "5 * 5 - (4 - 3)."
@@ -331,11 +371,9 @@ data:
               NOW, output the answer in the format below:
 
               ANSWER: 5 * 5 - (4 - 3)
-            type: user
-            useTypeInput: false
           outgoingConnections:
-            - output->"Assemble Prompt" RK-JSMbiBDXHieuODZ1UQ/message2
-          visualData: 1179.187250068812/506.137919370722/250/11
+            - output->"Chat" k-5Lxnn3SQtHCa-2Qc8FA/prompt
+          visualData: 1590.9261217085611/942.0781152700539/300/17
         '[tMQa3krgP6sGqE5saPRtY]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Graph Input" DDzJnQnNkq5S2CXgrqeTO/default
