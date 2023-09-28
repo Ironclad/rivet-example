@@ -24,7 +24,7 @@
     "node": ">=8.10.0"
   },
   "dependencies": {
-    "@ironclad/rivet-node": "^1.1.1",
+    "@ironclad/rivet-node": "^1.9.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
@@ -36,6 +36,7 @@
     "jsonfile": "^6.1.0",
     "module-alias": "^2.2.3",
     "morgan": "^1.10.0",
+    "svg2png": "^4.1.1",
     "ts-command-line-args": "^2.5.1",
     "ws": "^8.13.0"
   },
@@ -49,6 +50,7 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.4.9",
     "@types/supertest": "^2.0.12",
+    "@types/svg2png": "^4.1.2",
     "@types/ws": "^8.5.5",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
