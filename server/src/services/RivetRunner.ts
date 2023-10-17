@@ -7,7 +7,7 @@ import {
   loadProjectFromFile,
   runGraph,
 } from '@ironclad/rivet-node';
-import { rivetDebuggerServerState } from '@src/routes/DebuggerRoutes';
+import { rivetDebuggerServerState } from '@src/RivetDebuggerRoutes';
 import { env } from 'process';
 import { calculateExpression } from './CalculationService';
 
