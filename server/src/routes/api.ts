@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import WebSocket from 'ws';
 
-import Paths from './constants/Paths';
 import { rivetExample } from './RivetRoutes';
 import { rivetDebuggerSocketRoutes, startRivetDebuggerServer } from './DebuggerRoutes';
 import { runRivetGraph } from '@src/services/RivetRunner';
@@ -11,7 +10,7 @@ import { runRivetGraph } from '@src/services/RivetRunner';
 
 const apiRouter = Router();
 
-apiRouter.post(Paths.RivetExample, rivetExample);
+apiRouter.post('/rivet-example', rivetExample);
 
 // **** Websocket for Rivet debugger **** //
 
@@ -22,7 +21,7 @@ startRivetDebuggerServer(debuggerServer, {
   }
 });
 rivetDebuggerSocketRoutes(apiRouter, {
-  path: Paths.RivetDebugger,
+  path: '/rivet/debugger',
   wss: debuggerServer,
 });
 
