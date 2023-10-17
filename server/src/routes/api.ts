@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import jetValidator from 'jet-validator';
 import WebSocket from 'ws';
 
 import Paths from './constants/Paths';
@@ -10,8 +9,7 @@ import { runRivetGraph } from '@src/services/RivetRunner';
 
 // **** Variables **** //
 
-const apiRouter = Router(),
-  validate = jetValidator();
+const apiRouter = Router();
 
 apiRouter.post(Paths.RivetExample, rivetExample);
 
