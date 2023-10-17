@@ -4,6 +4,7 @@
   "scripts": {
     "build": "npx ts-node build.ts",
     "lint": "npx eslint --ext .ts src/",
+    "fix": "npx eslint --ext .ts --fix src/",
     "start": "node -r module-alias/register ./dist --env=production",
     "dev": "nodemon"
   },

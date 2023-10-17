@@ -18,7 +18,7 @@ const debuggerServer = new WebSocket.Server({ noServer: true });
 startRivetDebuggerServer(debuggerServer, {
   dynamicGraphRun: async ({ inputs, graphId }) => {
     await runRivetGraph(graphId, inputs);
-  }
+  },
 });
 rivetDebuggerSocketRoutes(apiRouter, {
   path: '/rivet/debugger',

@@ -65,7 +65,7 @@ export function rivetDebuggerSocketRoutes(
         console.info('Rivet debugger disconnected');
       });
     },
-    validate = () => { return undefined },
+    validate = () => { return undefined; },
     wss = new WebSocket.Server({ noServer: true }),
   } = options;
 
