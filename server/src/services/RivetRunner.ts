@@ -10,6 +10,7 @@ import {
 import { rivetDebuggerServerState } from '@src/RivetDebuggerRoutes';
 import { env } from 'process';
 import { calculateExpression } from './CalculationService';
+import svg2png from 'svg2png';
 
 export async function runMessageGraph(input: { type: 'assistant' | 'user'; message: string }[]): Promise<string> {
   const outputs = await runRivetGraph('5BI0Pfuu2naOUKqGUO-yZ' as GraphId, {
@@ -48,6 +49,19 @@ export async function runRivetGraph(graphId: GraphId, inputs?: GraphInputs): Pro
           };
         }
       },
+      svgToPng: async (_context, svgStr) => {
+        const svgBuf = Buffer.from(svgStr as string);
+        const pngBuf = await svg2png(svgBuf, { width: 400, height: 400 });
+        const data = new Uint8Array(pngBuf);
+
+        return {
+          type: 'image',
+          value: {
+            mediaType: 'image/png',
+            data,
+          }
+        }
+      }
     },
   });
 

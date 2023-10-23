@@ -18,7 +18,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Coalesce" TiKgjE9lRKo7jxKHSG5Ts/input1
-          visualData: 2200.4371718810057/1284.2891462371756/300/37
+          visualData: 2200.4371718810057/1284.2891462371756/300/37//
         '[-v8vfkQzqCrE6X_BYGRI7]:graphInput "Graph Input"':
           data:
             dataType: object[]
@@ -27,12 +27,12 @@ data:
           outgoingConnections:
             - data->"Assemble Prompt" bT5C1n80OJUvt0HWT3s2N/message1
             - data->"Messages" vo5dYm9w-N3DqWKg6GBB9/input1
-          visualData: 450.33584921685747/584.509433433768/300/42
+          visualData: 450.33584921685747/584.509433433768/300/42//
         '[3fKJMBoMrWywddgvRuXzX]:if "If"':
           outgoingConnections:
             - output->"Subgraph" KTDjmUolLaU2mGXtP3KX1/input
             - output->"Subgraph" KTDjmUolLaU2mGXtP3KX1/messages
-          visualData: 2047.0150253100212/1654.1185972534486/125/35
+          visualData: 2047.0150253100212/1654.1185972534486/125/35//
         '[59C-lzmaNDStH3FGrlK-q]:extractRegex "Extract Regex"':
           data:
             errorOnFailed: false
@@ -40,7 +40,7 @@ data:
             useRegexInput: false
           outgoingConnections:
             - output1->"Match" C9hewJjzGnDPz3ekCRq6T/input
-          visualData: 1312.5221695699574/1270.3071938320213/250/31
+          visualData: 1312.5221695699574/1270.3071938320213/250/31//
         '[C9hewJjzGnDPz3ekCRq6T]:match "Match"':
           data:
             caseCount: 3
@@ -52,7 +52,7 @@ data:
             - case1->"If" xOaYW0KIyS32L3yZCXgyz/if
             - case2->"If" 3fKJMBoMrWywddgvRuXzX/if
             - case3->"If" srBo0tH6dPQvoSOJZdlZN/if
-          visualData: 1612.8149997157275/1256.3058258619021/250/33
+          visualData: 1612.8149997157275/1256.3058258619021/250/33//
         '[KTDjmUolLaU2mGXtP3KX1]:subGraph "Subgraph"':
           data:
             graphId: cNR0gNaGhFnKosSc7NxRg
@@ -60,16 +60,16 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Coalesce" TiKgjE9lRKo7jxKHSG5Ts/input2
-          visualData: 2206.342358846274/1637.9389452966398/300/36
+          visualData: 2206.342358846274/1637.9389452966398/300/36//
         '[TiKgjE9lRKo7jxKHSG5Ts]:coalesce "Coalesce"':
           outgoingConnections:
             - output->"Graph Output" a3laSCibbrhJ4FVNCl3pD/value
-          visualData: 2635.0363832303638/1241.413797541481/150/38
+          visualData: 2635.0363832303638/1241.413797541481/150/38//
         '[a3laSCibbrhJ4FVNCl3pD]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 2865.329549900008/1217.757308376549/300/39
+          visualData: 2865.329549900008/1217.757308376549/300/39//
         '[bDQ8wPuk4SzLclg0UerD0]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -78,15 +78,15 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" fykcLhOkm_HAYnw-5KIH3/message1
-          visualData: -171.9018868674652/521.7207540964243/250/44
+          visualData: -171.9018868674652/521.7207540964243/250/44//
         '[bT5C1n80OJUvt0HWT3s2N]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" rTcNfKE6RPuc1xmHw1XAC/prompt
-          visualData: 1094.2224529334699/584.8127801065449/250/42
+          visualData: 1094.2224529334699/584.8127801065449/250/42//
         '[fykcLhOkm_HAYnw-5KIH3]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Graph Input" -v8vfkQzqCrE6X_BYGRI7/default
-          visualData: 148.0981131325348/623.7207540964243/250/44
+          visualData: 148.0981131325348/623.7207540964243/250/44//
         '[gDu9dzQVvUPtY2sfkkaTh]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -95,13 +95,13 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" fykcLhOkm_HAYnw-5KIH3/message2
-          visualData: -172.9018868674652/693.7207540964243/250/44
+          visualData: -172.9018868674652/693.7207540964243/250/44//
         '[jWA87wcF_GlS2np55xD5z]:text "Text"':
           data:
             text: You are a helpful assistant.
           outgoingConnections:
             - output->"Chat" rTcNfKE6RPuc1xmHw1XAC/systemPrompt
-          visualData: 1044.8468567815373/377.294598163788/300/42
+          visualData: 1044.8468567815373/377.294598163788/300/42//
         '[m-mbyszIqKzxgtKg1NrZ6]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -126,7 +126,7 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" bT5C1n80OJUvt0HWT3s2N/message2
-          visualData: 800.9994867016692/733.8099103553141/250/42
+          visualData: 800.9994867016692/733.8099103553141/250/42//
         '[p9aXKbDTZCpwjxqZQkE5o]:subGraph "Subgraph"':
           data:
             graphId: img3RO-RZ3wj9vprc0g7x
@@ -134,7 +134,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Coalesce" TiKgjE9lRKo7jxKHSG5Ts/input3
-          visualData: 2213.211121093388/1895.8418358669255/300/47
+          visualData: 2213.211121093388/1895.8418358669255/300/47//
         '[rTcNfKE6RPuc1xmHw1XAC]:chat "Chat"':
           data:
             cache: false
@@ -160,21 +160,21 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract Regex" 59C-lzmaNDStH3FGrlK-q/input
-          visualData: 1434.0736493483123/577.8084754796987/200/42
+          visualData: 1434.0736493483123/577.8084754796987/200/42//
         '[srBo0tH6dPQvoSOJZdlZN]:if "If"':
           outgoingConnections:
             - output->"Subgraph" p9aXKbDTZCpwjxqZQkE5o/input
-          visualData: 2036.2549616500767/1920.3144962154684/125/45
+          visualData: 2036.2549616500767/1920.3144962154684/125/45//
         '[vo5dYm9w-N3DqWKg6GBB9]:passthrough "Messages"':
           outgoingConnections:
             - output1->"If" 3fKJMBoMrWywddgvRuXzX/value
             - output1->"If" srBo0tH6dPQvoSOJZdlZN/value
             - output1->"If" xOaYW0KIyS32L3yZCXgyz/value
-          visualData: 1617.9008842151597/1671.8338365777877/175/32
+          visualData: 1617.9008842151597/1671.8338365777877/175/32//
         '[xOaYW0KIyS32L3yZCXgyz]:if "If"':
           outgoingConnections:
             - output->"Subgraph" -W6COoQKUcQ9w9B3jI03T/messages
-          visualData: 2034.8572003388883/1304.5830896568502/125/34
+          visualData: 2034.8572003388883/1304.5830896568502/125/34//
     cNR0gNaGhFnKosSc7NxRg:
       metadata:
         description: ""
@@ -188,22 +188,22 @@ data:
             useRegexInput: false
           outgoingConnections:
             - output1->"External Call" UXAt4NG3Kg1zBVvU1RBZi/arguments
-          visualData: 1716.0345092383493/540.2575387223877/250/13
+          visualData: 1716.0345092383493/540.2575387223877/250/13//
         '[8Ij56L9chrM6V_OCwWsA4]:text "Text"':
           data:
             text: You are a helpful calculator.
           outgoingConnections:
             - output->"Chat" G7DYuXsaD9G6pT1q0S1bS/systemPrompt
-          visualData: 1292.670334044323/134.05720962899662/300/12
+          visualData: 1292.670334044323/134.05720962899662/300/12//
         '[9XG5P2-Pk7aL-htut6RY5]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 2239.088255456765/523.0296890984553/300/15
+          visualData: 2239.088255456765/523.0296890984553/300/15//
         '[CUa1IGD0x5BX8pmjwtBHS]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" G7DYuXsaD9G6pT1q0S1bS/prompt
-          visualData: 1353.067901234568/330.8240740740741/250/4
+          visualData: 1353.067901234568/330.8240740740741/250/4//
         '[G7DYuXsaD9G6pT1q0S1bS]:chat "Chat"':
           data:
             cache: false
@@ -229,7 +229,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract Regex" 7tExf5-mnSOS-K83RGgTp/input
-          visualData: 1726.253086419753/268.4259259259259/200/3
+          visualData: 1726.253086419753/268.4259259259259/200/3//
         '[GGQ9vgjldv_HQSMoPrWEk]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -243,7 +243,7 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" CUa1IGD0x5BX8pmjwtBHS/message2
-          visualData: 1039.0308641975307/446.65740740740745/250/5
+          visualData: 1039.0308641975307/446.65740740740745/250/5//
         '[UXAt4NG3Kg1zBVvU1RBZi]:externalCall "External Call"':
           data:
             functionName: calculate
@@ -251,7 +251,7 @@ data:
             useFunctionNameInput: false
           outgoingConnections:
             - result->"Graph Output" 9XG5P2-Pk7aL-htut6RY5/value
-          visualData: 2035.1029381506592/519.9697167603723/150/14
+          visualData: 2035.1029381506592/519.9697167603723/150/14//
         '[bsYlfUDGifFVdX2YrJCpw]:graphInput "Graph Input"':
           data:
             dataType: chat-message[]
@@ -259,7 +259,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Assemble Prompt" CUa1IGD0x5BX8pmjwtBHS/message1
-          visualData: 1006.895061728395/280.81481481481484/300/6
+          visualData: 1006.895061728395/280.81481481481484/300/6//
     img3RO-RZ3wj9vprc0g7x:
       metadata:
         description: ""
@@ -273,12 +273,12 @@ data:
             useDefaultValueInput: true
           outgoingConnections:
             - data->"Assemble Prompt" RK-JSMbiBDXHieuODZ1UQ/message1
-          visualData: 1136.3524398032898/315.6503388790682/300/12
+          visualData: 1136.3524398032898/315.6503388790682/300/12//
         '[IxNaO-Ge-QFsjlPWmL0X8]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 2201.499861001212/982.629277966354/300/21
+          visualData: 2201.499861001212/982.629277966354/300/21//
         '[JSxv1qjjpQst-gerSvo1P]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -287,11 +287,11 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" tMQa3krgP6sGqE5saPRtY/message1
-          visualData: -93.82558174749487/561.3994494207175/250/7
+          visualData: -93.82558174749487/561.3994494207175/250/7//
         '[RK-JSMbiBDXHieuODZ1UQ]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" XcI4a5ehj_O13pOmwXmxQ/prompt
-          visualData: 1505.4893171681276/383.95171130779426/250/10
+          visualData: 1505.4893171681276/383.95171130779426/250/10//
         '[XcI4a5ehj_O13pOmwXmxQ]:chat "Chat"':
           data:
             cache: false
@@ -317,7 +317,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Text" rFNDdJB9Wd3KFdfVppqOi/numbers
-          visualData: 1795.5100994530835/310.79140519008365/200/14
+          visualData: 1795.5100994530835/310.79140519008365/200/14//
         '[hMIBnjUZGOOhd7BjO8Dmg]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -330,7 +330,7 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" RK-JSMbiBDXHieuODZ1UQ/message2
-          visualData: 1179.187250068812/506.137919370722/250/11
+          visualData: 1179.187250068812/506.137919370722/250/11//
         '[k-5Lxnn3SQtHCa-2Qc8FA]:chat "Chat"':
           data:
             cache: false
@@ -356,7 +356,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Graph Output" IxNaO-Ge-QFsjlPWmL0X8/value
-          visualData: 1940.7606821585725/980.7766285941701/200/20
+          visualData: 1940.7606821585725/980.7766285941701/200/20//
         '[rFNDdJB9Wd3KFdfVppqOi]:text "Text"':
           data:
             text: >
@@ -373,11 +373,11 @@ data:
               ANSWER: 5 * 5 - (4 - 3)
           outgoingConnections:
             - output->"Chat" k-5Lxnn3SQtHCa-2Qc8FA/prompt
-          visualData: 1590.9261217085611/942.0781152700539/300/17
+          visualData: 1590.9261217085611/942.0781152700539/300/17//
         '[tMQa3krgP6sGqE5saPRtY]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Graph Input" DDzJnQnNkq5S2CXgrqeTO/default
-          visualData: 223.54273088295088/599.3456607134882/250/null
+          visualData: 223.54273088295088/599.3456607134882/250/null//
     r97vYKQCVceae5VCCKK4J:
       metadata:
         description: ""
@@ -397,12 +397,12 @@ data:
               - Play a game of 24. If the user provides you with a few integers, you can try to combine them with simple arithmetic operations to get to a value of 24.
           outgoingConnections:
             - output->"Chat" g1OFlelzeONyJvWgLxmiS/systemPrompt
-          visualData: 732/104/300/null
+          visualData: 732/104/300/null//
         '[6Gr81m6XMKM52nSAG-2b5]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 1389.6530238057808/170.04259066944488/300/4
+          visualData: 1389.6530238057808/170.04259066944488/300/4//
         '[g1OFlelzeONyJvWgLxmiS]:chat "Chat"':
           data:
             cache: false
@@ -428,7 +428,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Graph Output" 6Gr81m6XMKM52nSAG-2b5/value
-          visualData: 1104.7082155296682/132/200/3
+          visualData: 1104.7082155296682/132/200/3//
         '[yjH76st57RvQxmseZ-m_u]:graphInput "Graph Input"':
           data:
             dataType: chat-message[]
@@ -436,8 +436,61 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Chat" g1OFlelzeONyJvWgLxmiS/prompt
-          visualData: 735.613558555666/346.6025202108885/300/5
+          visualData: 735.613558555666/346.6025202108885/300/5//
+    zkIxKzUHLyyAkD77toaNh:
+      metadata:
+        description: ""
+        id: zkIxKzUHLyyAkD77toaNh
+        name: Wizards
+      nodes:
+        '[Lixu3MF_KmdhCz2ddICZd]:text "Text"':
+          data:
+            text: Draw a stick figure as an SVG
+          outgoingConnections:
+            - output->"Chat" qbci9oDXyWboMVrBE99kQ/prompt
+          visualData: 581/236/330/null//
+        '[nxINy-eFozSzVxBoIrRP-]:extractRegex "Extract Regex"':
+          data:
+            errorOnFailed: false
+            regex: (\<svg (.|\n)*\<\/svg\>)
+            useRegexInput: false
+          outgoingConnections:
+            - output1->"External Call" yGw17Qpof261SlIKTtPOs/arguments
+          visualData: 1359/241/280/2//
+        '[qbci9oDXyWboMVrBE99kQ]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-4
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract Regex" nxINy-eFozSzVxBoIrRP-/input
+          visualData: 1018/187/230/1//
+        '[yGw17Qpof261SlIKTtPOs]:externalCall "External Call"':
+          data:
+            functionName: svgToPng
+            useErrorOutput: false
+            useFunctionNameInput: false
+          visualData: 1769/232/444/3//
   metadata:
     description: ""
     id: QiMtlIf2TmgkjfxPGu1Cd
     title: Untitled Project
+  plugins: []
