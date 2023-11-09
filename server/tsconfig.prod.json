@@ -6,6 +6,5 @@
   },
   "exclude": [
     "spec",
-    "build.ts"
   ]
 }
