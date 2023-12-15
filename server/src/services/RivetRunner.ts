@@ -3,9 +3,9 @@ import {
   GraphInputs,
   GraphOutputs,
   coerceType,
+  createProcessor,
   currentDebuggerState,
   loadProjectFromFile,
-  runGraph
 } from '@ironclad/rivet-node';
 
 import { rivetDebuggerServerState } from '../RivetDebuggerRoutes.js';
@@ -26,7 +26,7 @@ export async function runMessageGraph(input: { type: 'assistant' | 'user'; messa
 export async function runRivetGraph(graphId: GraphId, inputs?: GraphInputs): Promise<GraphOutputs> {
   const project = currentDebuggerState.uploadedProject ?? await loadProjectFromFile('../chat.rivet-project');
 
-  const outputs = await runGraph(project, {
+  const { run } = createProcessor(project, {
     graph: graphId,
     openAiKey: env.OPENAI_API_KEY as string,
     inputs,
@@ -51,6 +51,8 @@ export async function runRivetGraph(graphId: GraphId, inputs?: GraphInputs): Pro
       },
     },
   });
+
+  const outputs = await run();
 
   return outputs;
 }

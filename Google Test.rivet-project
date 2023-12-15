@@ -1,0 +1,96 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    MD4BBS6QTTDZnPrsIfefX:
+      metadata:
+        description: ""
+        id: MD4BBS6QTTDZnPrsIfefX
+        name: palmtest
+      nodes:
+        '[FPUNDPw27rF9MOCavaPcq]:chatGoogle "Chat (Google)"':
+          data:
+            cache: false
+            maxTokens: 1024
+            model: chat-bison
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useMaxTokensInput: false
+            useModelInput: false
+            useTemperatureInput: false
+            useTopKInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+          visualData: 535/292/305/1//
+        '[WEyEOBPTxSg_ZT3um7Dre]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: Tell me about yourself
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chat (Google)" FPUNDPw27rF9MOCavaPcq/prompt
+          visualData: -65/337/280/null//
+    dycfSp9MpnSWfR1zjmN9M:
+      metadata:
+        description: ""
+        id: dycfSp9MpnSWfR1zjmN9M
+        name: Test
+      nodes:
+        '[LPja1caanG8bPYisZPsjU]:assembleMessage "Assemble Message"':
+          data:
+            toolCallId: ""
+            type: user
+            useToolCallIdInput: false
+            useTypeInput: false
+          outgoingConnections:
+            - message->"Chat (Google)" t9FS6EZgUeJb5887X9c69/prompt
+          visualData: -115/324/280/null//
+        '[TTXYWn6eDYQN13ItpyUEs]:text "Text"':
+          data:
+            text: Describe this image.
+          outgoingConnections:
+            - output->"Assemble Message" LPja1caanG8bPYisZPsjU/part2
+          visualData: -498/472/330/10//
+        '[dfwz6ki-MH3aUF7Xhy10J]:image "Image"':
+          data:
+            data:
+              refId: hta7PXK2WpiM9eMIhUpAN
+            mediaType: image/png
+            useDataInput: false
+            useMediaTypeInput: false
+          outgoingConnections:
+            - image->"Assemble Message" LPja1caanG8bPYisZPsjU/part1
+          visualData: -446/33/280/9//
+        '[t9FS6EZgUeJb5887X9c69]:chatGoogle "Chat (Google)"':
+          data:
+            cache: false
+            maxTokens: 1024
+            model: gemini-pro-vision
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useMaxTokensInput: false
+            useModelInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopKInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+          visualData: 251/257/316/6//
+  metadata:
+    description: Google Test
+    id: DYD_cyOun1VQnkvwcIfL-
+    title: Google Test
+  plugins:
+    - id: google
+      name: Google
+      type: built-in
