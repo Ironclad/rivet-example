@@ -4,17 +4,17 @@
 
 import morgan from 'morgan';
 import express, { Request, Response, NextFunction } from 'express';
-import logger from 'jet-logger';
+import winston from 'winston';
 
 import 'express-async-errors';
 
-import BaseRouter from './Router';
+import BaseRouter from './Router.js';
 
-import EnvVars from '@src/constants/EnvVars';
-import HttpStatusCodes from '@src/constants/HttpStatusCodes';
+import EnvVars from './constants/EnvVars.js';
+import HttpStatusCodes from './constants/HttpStatusCodes.js';
 
-import { NodeEnvs } from '@src/constants/misc';
-import { RouteError } from '@src/other/classes';
+import { NodeEnvs } from './constants/misc.js';
+import { RouteError } from './other/classes.js';
 
 
 // **** Variables **** //
@@ -45,7 +45,7 @@ app.use((
   next: NextFunction,
 ) => {
   if (EnvVars.NodeEnv !== NodeEnvs.Test) {
-    logger.err(err, true);
+    winston.error(err);
   }
   let status = HttpStatusCodes.BAD_REQUEST;
   if (err instanceof RouteError) {
@@ -59,4 +59,4 @@ app.use((
 const SERVER_START_MSG = ('Express server started on port: ' + 
   EnvVars.Port.toString());
 
-app.listen(EnvVars.Port, () => logger.info(SERVER_START_MSG));
+app.listen(EnvVars.Port, () => winston.info(SERVER_START_MSG));

@@ -5,11 +5,12 @@ import {
   coerceType,
   currentDebuggerState,
   loadProjectFromFile,
-  runGraph,
+  runGraph
 } from '@ironclad/rivet-node';
-import { rivetDebuggerServerState } from '@src/RivetDebuggerRoutes';
+
+import { rivetDebuggerServerState } from '../RivetDebuggerRoutes.js';
 import { env } from 'process';
-import { calculateExpression } from './CalculationService';
+import { calculateExpression } from './CalculationService.js';
 import svg2png from 'svg2png';
 
 export async function runMessageGraph(input: { type: 'assistant' | 'user'; message: string }[]): Promise<string> {
@@ -32,7 +33,7 @@ export async function runRivetGraph(graphId: GraphId, inputs?: GraphInputs): Pro
     inputs,
     remoteDebugger: rivetDebuggerServerState.server ?? undefined,
     externalFunctions: {
-      calculate: async (_context, calculationStr) => {
+      calculate: async (_context: any, calculationStr: any) => {
         if (typeof calculationStr !== 'string') {
           throw Error('expected a string input');
         }

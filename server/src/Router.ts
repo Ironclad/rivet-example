@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import WebSocket from 'ws';
+import { WebSocketServer } from 'ws';
 
-import { rivetDebuggerSocketRoutes, startRivetDebuggerServer } from './RivetDebuggerRoutes';
-import { runMessageGraph, runRivetGraph } from '@src/services/RivetRunner';
+import { rivetDebuggerSocketRoutes, startRivetDebuggerServer } from './RivetDebuggerRoutes.js';
+import { runMessageGraph, runRivetGraph } from './services/RivetRunner.js';
 
 
 // **** Variables **** //
@@ -18,7 +18,7 @@ apiRouter.post('/rivet-example', async (req, res) => {
 
 // **** Websocket for Rivet debugger **** //
 
-const debuggerServer = new WebSocket.Server({ noServer: true });
+const debuggerServer = new WebSocketServer({ noServer: true });
 startRivetDebuggerServer(debuggerServer, {
   dynamicGraphRun: async ({ inputs, graphId }) => {
     await runRivetGraph(graphId, inputs);
